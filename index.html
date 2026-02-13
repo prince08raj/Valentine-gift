@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  text-align:center;
+  background:#ffe6ea;
+  overflow:hidden;
+}
+
+/* Main container */
+.container{
+  margin-top:60px;
+}
+
+/* Image */
+img{
+  width:280px;
+  border-radius:15px;
+}
+
+/* Heading */
+h1{
+  margin:20px 0;
+  color:#333;
+}
+
+/* Buttons */
+button{
+  padding:12px 26px;
+  font-size:18px;
+  border:none;
+  border-radius:12px;
+  margin:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#yes{
+  background:#28c76f;
+  color:white;
+}
+
+#yes:hover{
+  background:#1fa55a;
+}
+
+#no{
+  background:#ea5455;
+  color:white;
+  position:relative;
+}
+
+/* Floating hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(-100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- GIF or PNG here -->
+<img src="dudu.gif">
+
+<h1>Priyanka, will you be my Valentine? ❤️</h1>
+
+<button id="yes" onclick="yesClick()">Yes ❤️</button>
+<button id="no" onmouseover="moveNo()" ontouchstart="moveNo()">No</button>
+
+</div>
+
+<style>
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:floatUp 6s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+
+<script>
+setInterval(()=>{
+  let heart=document.createElement("div");
+  heart.innerHTML="❤️";
+  heart.className="heart";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*20+15)+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+},400);
+
+function moveNo(){
+  let btn=document.getElementById("no");
+  btn.style.position="absolute";
+  btn.style.left=Math.random()*80+"vw";
+  btn.style.top=Math.random()*80+"vh";
+}
+</script>
+
+
+<script>
+function yesClick(){
+
+document.body.innerHTML=`
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+text-align:center;
+}
+
+/* Pages */
+.page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:15px;
+}
+
+.memory,.videoPage{
+display:none;
+padding:30px 15px;
+}
+
+/* Button */
+.nextBtn{
+padding:14px 32px;
+background:linear-gradient(45deg,#ff4d6d,#ff1e4d);
+color:white;
+border:none;
+border-radius:28px;
+font-size:17px;
+cursor:pointer;
+margin-top:25px;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+.nextBtn:hover{
+transform:scale(1.07);
+}
+
+/* Gallery */
+.gallery{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+/* Smaller aesthetic photos */
+.photo-card{
+background:white;
+padding:10px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+width:190px;
+transition:0.3s;
+}
+
+.photo-card img{
+width:100%;
+border-radius:8px;
+}
+
+.photo-card:nth-child(odd){
+transform:rotate(-5deg);
+}
+.photo-card:nth-child(even){
+transform:rotate(5deg);
+}
+
+.photo-card:hover{
+transform:rotate(0deg) scale(1.08);
+}
+</style>
+
+
+<!-- PAGE 1 -->
+<div class="page" id="first">
+
+<h1>❤️ Thank You My Love ❤️</h1>
+
+<img src="dudu-.gif" style="
+  width:200px;
+  margin:20px 0;
+  border-radius:15px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+">
+
+<p style="max-width:600px;font-size:19px;">
+You just made my day incredibly special.
+Having you in my life means more than words can express.
+I promise to cherish every moment with you ❤️
+</p>
+
+<h2>Happy Valentine’s Day 💖</h2>
+
+<button class="nextBtn" onclick="showMemory()">
+✨ Our First Valentine ❤️
+</button>
+
+</div>
+
+
+<!-- PAGE 2 -->
+<div class="memory" id="second">
+
+<h1>✨ Our First Valentine Together ✨</h1>
+
+<p style="max-width:600px;margin:auto;font-size:17px;">
+Even if distance existed, our hearts were always close.
+That first Valentine will always stay special ❤️
+</p>
+
+<div class="gallery">
+<div class="photo-card"><img src="eye.jpeg"></div>
+<div class="photo-card"><img src="handanddrose.jpeg"></div>
+</div>
+
+<button class="nextBtn" onclick="showVideoPage()">
+😘 Our Long-Distance Moments ❤️
+</button>
+
+</div>
+
+
+<!-- PAGE 3 -->
+<div class="videoPage" id="third">
+
+<h1>😘💖 Our Video Call Memories ❤️</h1>
+
+<p style="max-width:600px;margin:auto;font-size:17px;">
+Miles apart but never truly distant —
+our calls, laughs, and memories kept us close ❤️
+</p>
+
+<div class="gallery">
+<div class="photo-card"><img src="video1.jpeg"></div>
+<div class="photo-card"><img src="video2.jpeg"></div>
+<div class="photo-card"><img src="video3.jpeg"></div>
+</div>
+
+<h2 style="margin-top:25px;">
+We may miles apart, but every call, every smile, every moment keeps our hearts closer than ever 💖
+</h2>
+
+</div>
+
+`;
+
+}
+
+function showMemory(){
+document.getElementById("first").style.display="none";
+document.getElementById("second").style.display="block";
+}
+
+function showVideoPage(){
+document.getElementById("second").style.display="none";
+document.getElementById("third").style.display="block";
+}
+</script>
+
+
+</body>
+</html>
